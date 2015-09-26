@@ -1,8 +1,8 @@
 import os
 import eyed3
 #put adress here
-adress = ""
-folder_list = os.listdir(adress)
+adress = ""     #give your own address here for the directory 
+folder_list = os.listdir(adress)        #btw for the spelling of address, that's intentional
 
 
 #album_name = i.split('-')[2]
@@ -17,9 +17,9 @@ for x in next(os.walk(adress))[1]:
         if file_name.endswith('.mp3'):
             f = eyed3.load(file_name)
             f.tag.album = album_name
-            f.tag.artist = u'Pink Floyd'
-            f.tag.genre = u'Psychedelic Rock'
-            f.tag.album_artist = u'Pink Floyd'
+            f.tag.artist = u'Pink Floyd'    # change the setting according to your specifications
+            f.tag.genre = u'Psychedelic Rock'   
+            f.tag.album_artist = u'Pink Floyd'  
             f.tag.title = title
             f.tag.play_count = track_number
             f.tag.save(file_name, version=(1,None,None))
